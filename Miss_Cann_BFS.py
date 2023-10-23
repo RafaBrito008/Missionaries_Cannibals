@@ -4,9 +4,9 @@
 from collections import deque
 
 
-# Función que valida si un estado de (Monjes, Caníbales) es seguro o no.
+# Función que valida si un estado de (Misioneros, Caníbales) es seguro o no.
 def es_estado_valido(M, C):
-    # Si hay más caníbales que monjes en una orilla y hay monjes en esa orilla, no es un estado válido.
+    # Si hay más caníbales que Misioneros en una orilla y hay Misioneros en esa orilla, no es un estado válido.
     if (M < C and M > 0) or (M > C and M < 3):
         return False
     # Validación para valores fuera de los límites aceptables.
@@ -17,7 +17,7 @@ def es_estado_valido(M, C):
 
 # Función que genera todos los movimientos posibles desde un estado dado.
 def movimientos_posibles(M, C, B):
-    # Posibles movimientos: (Monjes, Caníbales)
+    # Posibles movimientos: (Misioneros, Caníbales)
     movimientos = [(-1, -1), (-2, 0), (0, -2), (-1, 0), (0, -1)]
     posibilidades = []
 
@@ -77,7 +77,7 @@ if __name__ == "__main__":
             M, C, B = estado
             M_d, C_d, B_d = estado_derecha(M, C, B)
             print(
-                f"Orilla Izquierda -> Monjes={M}, Caníbales={C}, Bote={B} || Orilla Derecha -> Monjes={M_d}, Caníbales={C_d}, Bote={B_d}"
+                f"Orilla Izquierda -> Misioneros={M}, Caníbales={C}, Bote={B} || Orilla Derecha -> Misioneros={M_d}, Caníbales={C_d}, Bote={B_d}"
             )
     else:
         print("No hay solución.")
